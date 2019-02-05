@@ -1,1 +1,1 @@
-CREATE TABLE IF NOT EXISTS customers (id INT PRIMARY KEY AUTO_INCREMENT, first_name VARCHAR(30), last_name VARCHAR(30));
+CREATE table IF NOT EXISTS customers(id int primary key AUTO_INCREMENT, first_name varchar(30), last_name varchar(30));

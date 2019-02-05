@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
@@ -17,7 +20,12 @@ public class DemoApplication implements CommandLineRunner {
 		Customer created = customerRepository.save(new Customer(null, "Hidetoshi", "Dekisugi"));
 		System.out.println(created + " is created!");
 		
-		customerRepository.findAll().forEach(System.out::println);
+		Pageable pageable = new PageRequest(0,3);
+		Page<Customer> page = customerRepository.findAllOrderByName(pageable);
+		
+		System.out.println("1ページのデータ数=" + page.getSize());
+		
+		page.getContent().forEach(System.out::println);
 	}
 	
 	public static void main(String[] args) {
