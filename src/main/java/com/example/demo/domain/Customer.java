@@ -12,11 +12,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Customer {
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	@Column(nullable = false)
 	private String firstName;
+	
 	@Column(nullable = false)
 	private String lastName;
 }

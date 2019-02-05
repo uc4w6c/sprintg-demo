@@ -14,15 +14,14 @@ public class CustomerService {
 	@Autowired
 	CustomerRepository customerRepository;
 
-	/*
 	public List<Customer> findAll() {
 		return customerRepository.findAllOrderByName();
 	}
 	
 	public Customer findOne(Integer id) {
-		return customerRepository.findOne(id);
+		return customerRepository.getOne(id);
 	}
- 	*/
+
 	public Customer create(Customer customer) {
 		return customerRepository.save(customer);
 	}
@@ -33,7 +32,7 @@ public class CustomerService {
 
 	/*
 	public Customer delete(Integer id) {
-		return customerRepository.delete(id);
+		return customerRepository.deleteInBatch(id);
 	}
 	*/
 }
