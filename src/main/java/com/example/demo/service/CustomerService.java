@@ -30,9 +30,7 @@ public class CustomerService {
 		return customerRepository.save(customer);
 	}
 
-	/*
-	public Customer delete(Integer id) {
-		return customerRepository.deleteInBatch(id);
+	public void delete(Integer id) {
+		customerRepository.deleteById(id);
 	}
-	*/
 }
