@@ -24,4 +24,5 @@
 /.nb-gradle/
 /build/
 /target/
+/src/main/java/patch/GenPassword.java
 

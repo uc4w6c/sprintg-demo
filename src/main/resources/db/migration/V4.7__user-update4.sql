@@ -1,0 +1,1 @@
+UPDATE users SET encoded_password = '96993b1707c60b24ca2686458c7bf10c9be152144727ec55ab9dab5ff184f8290e5aa3c2ed1df229';
