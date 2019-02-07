@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			  		.logoutSuccessUrl("/loginForm");
 			
 		}
-		
+
 		@Bean
 		PasswordEncoder passwordEncoder() {
 			return new Pbkdf2PasswordEncoder();
