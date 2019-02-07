@@ -30,7 +30,7 @@ public class CustomerRestController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	Customer postCustomers(@RequestBody Customer customer) {
-		return customerService.create(customer);
+		return customerService.create(customer, customer.getUser());
 	}
 
 }
