@@ -24,6 +24,8 @@
 /.nb-gradle/
 /build/
 /target/
+
+### FILE ###
 ./src/main/java/patch/GenPassword.java
 ./src/main/resources/application.properties
 
