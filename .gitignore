@@ -25,4 +25,5 @@
 /build/
 /target/
 /src/main/java/patch/GenPassword.java
+/src/main/resources/application.properties
 

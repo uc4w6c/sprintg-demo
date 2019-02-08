@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
-	  layout:decorate="~{commons/layout}">
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
+	<meta charset="UTF-8">
 	<title>顧客一覧</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}"/>
 </head>
 <body>
 
 <h1>顧客管理システム</h1>
+<p>
+	<span sec:authentication="principal.user.username">duke</span>さんログイン中。
+</p>
+
 <form th:action="@{/logout}" method="post">
 	<input type="submit" class="btn btn-default btn-xs" value="ログアウト" />
 </form>
 
-<!--  <div layout:fragment="contents" class="col-sm-12"> -->
-<div th:replace="~{commons/layout :: contents}" class="col-sm-12">
+<div class="container">
 	<form th:action="@{/customers/create}" th:object="${customerForm}" class="form-horizontal" method="post">
 		<fieldset>
 			<legend>顧客情報作成</legend>
